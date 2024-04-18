@@ -1,5 +1,6 @@
 //using Serilog;
 
+using MagicVilla_VillaAPI;
 using MagicVilla_VillaAPI.Data;
 using MagicVilla_VillaAPI.Logging;
 using Microsoft.EntityFrameworkCore;
@@ -23,6 +24,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<ILogging, Logging>();
 builder.Services.AddScoped<ApplicationDbContext>();
+builder.Services.AddAutoMapper(typeof(MappingConfig));
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
